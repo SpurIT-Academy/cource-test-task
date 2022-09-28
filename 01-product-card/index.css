@@ -1,0 +1,272 @@
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+:root {
+	--palette-white: #fff;
+	--palette-mine-shaft: #2f2f2f;
+	--palette-la-palma: #42940f;
+	--palette-tundora: #4e4e4e;
+	--palette-verdun-green: #1f5200;
+	--palette-classic-rose: #fdcff3;
+	--palette-golden-tainoi: #ffcf56;
+	--palette-cultured: #f6f6f6;
+
+	--box-shadow-lg: 0px 0px 45px -4px rgba(0, 0, 0, 0.18);
+
+	--border-radius-lg: 0.75rem;
+	--border-radius-sm: 0.5rem;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background-color: var(--palette-cultured);
+	font-family: 'Arial', sans-serif;
+	line-height: 1.5;
+}
+
+.visually-hidden {
+	position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+	width: 100%;
+	max-width: 76.25rem; /* 1220px */
+	padding-right: 1.25rem;
+	padding-left: 1.25rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* #region Headings */
+
+.heading {
+	font-weight: 900;
+	line-height: 1.5;
+}
+
+.heading--xl {
+	font-size: 3rem;
+	text-transform: uppercase;
+}
+
+.heading--lg {
+	font-size: 1.5rem;
+}
+
+/* #endregion */
+
+/* #region Sections */
+
+.section {
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+	margin-bottom: 4rem;
+}
+
+.section__heading {
+	margin-top: 0;
+	margin-bottom: 2.5rem;
+	text-align: center;
+}
+
+/* #endregion */
+
+/* #region Buttons */
+
+.button {
+	width: 17rem;
+	max-width: 100%;
+	min-height: 48px;
+	border: 2px solid var(--palette-la-palma);
+	border-radius: var(--border-radius-sm);
+	padding: 0.59375rem 1rem;
+	background-color: transparent;
+	font-size: 1.125rem;
+	font-weight: 900;
+	line-height: 1.41;
+	color: var(--palette-la-palma);
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: color .3s, background-color .3s, border-color.3s;
+	cursor: pointer;
+}
+
+@media (prefers-reduced-motion) {
+	.button {
+		transition: unset;
+	}
+}
+
+.button:hover {
+	background-color: var(--palette-la-palma);
+	color: var(--palette-white);
+}
+
+.button:focus {
+	background-color: var(--palette-la-palma);
+	color: var(--palette-white);
+	outline: 0.25rem dashed var(--palette-mine-shaft);
+	outline-offset: 0.25rem;
+}
+
+.button:active {
+	border-color: var(--palette-verdun-green);
+	background-color: var(--palette-verdun-green);
+	color: var(--palette-white);
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+	border-color: var(--palette-tundora);
+	background-color: var(--palette-tundora);
+	color: var(--palette-white);
+	cursor: not-allowed;
+}
+
+/* #endregion */
+
+/* #region Tags */
+
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0.5rem;
+	list-style: none;
+}
+
+.tags__item {
+	padding: 0 1rem;
+	border-radius: var(--border-radius-sm);
+	margin: 0.5rem;
+	font-weight: 400;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.tags__item--new {
+	background-color: var(--palette-classic-rose);
+}
+
+.tags__item--last {
+	background-color: var(--palette-golden-tainoi);
+}
+
+/* #endregion */
+
+/* #region Products */
+
+.products__list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
+	grid-gap: 1.25rem;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.products__card {
+	max-width: 100%;
+	height: 100%;
+}
+
+/* #endregion */
+
+/* #region Product card */
+
+.product-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	border-radius: var(--border-radius-lg);
+	background-color: var(--palette-white);
+	box-shadow: var(--box-shadow-lg);
+	color: var(--palette-mine-shaft);
+}
+
+.product-card__image {
+	display: block;
+	width: 100%;
+	height: auto;
+	flex: 0 0 auto;
+	border-top-left-radius: var(--border-radius-lg);
+	border-top-right-radius: var(--border-radius-lg);
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+
+.product-card__tags {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	max-width: 100%;
+}
+
+.product-card__info {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	padding: 1.5rem;
+}
+
+.product-card__heading {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+.product-card__link {
+	color: inherit;
+	text-decoration: none;
+}
+
+.product-card__link:focus {
+	outline: none;
+}
+
+.product-card__link::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: var(--border-radius-lg);
+}
+
+.product-card__link:focus::before {
+	outline: 0.25rem dashed var(--palette-mine-shaft);
+	outline-offset: 0.25rem;
+}
+
+.product-card__description {
+	position: relative;
+	z-index: 1;
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+}
+
+.product-card__button {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	margin-top: auto;
+}
+
+/* #endregion */

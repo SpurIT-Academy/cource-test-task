@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SpurIT - Тестовое задание 1. HTML и CSS</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<main>
+    <h1 class="visually-hidden">Магазин апельсинового сока</h1>
+    <section class="section products" aria-labelledby="products_heading">
+        <span id="ally_tags_label" class="visually-hidden" aria-hidden="true">Теги продукта</span>
+        <div class="section__container container">
+            <h2 id="products_heading" class="section__heading heading heading--xl">Товары недели</h2>
+            <ul class="products__list" role="list">
+                <li class="products__item">
+                    <article class="products__card product-card">
+                        <img src="https://i.ibb.co/jbQ4fh9/orange.jpg" alt="" class="product-card__image">
+                        <ul class="product-card__tags tags" role="list" aria-labelledby="ally_tags_label product_heading_1">
+                            <li class="tags__item tags__item--new">Новинка</li>
+                            <li class="tags__item tags__item--last">Последний</li>
+                        </ul>
+                        <div class="product-card__info">
+                            <h3 id="product_heading_1" class="product-card__heading heading heading--lg">
+                                <a href="#" class="product-card__link">Апельсиновый сок</a>
+                            </h3>
+                            <p class="product-card__description">Он придётся по душе, даже если ты слива лиловая, спелая, садовая.</p>
+                            <button type="button" class="product-card__button button">
+                                <span class="visually-hidden">Добавить апельсиновый сок</span> В корзину
+                            </button>
+                        </div>
+                    </article>
+                </li>
+                <li class="products__item">
+                    <article class="products__card product-card">
+                        <img src="https://i.ibb.co/jbQ4fh9/orange.jpg" alt="" class="product-card__image">
+                        <div class="product-card__info">
+                            <h3 id="product_heading_2" class="product-card__heading heading heading--lg">
+                                <a href="#" class="product-card__link">Апельсиновый сок</a>
+                            </h3>
+                            <p class="product-card__description">ООн придётся по душе, даже если ты слива лиловая, спелая, садовая. Ну что сказать? Ну что сказать? Устроены так длинные описания.</p>
+                            <button type="button" class="product-card__button button">
+                                <span class="visually-hidden">Добавить апельсиновый сок</span> В корзину
+                            </button>
+                        </div>
+                    </article>
+                </li>
+                <li class="products__item">
+                    <article class="products__card product-card">
+                        <img src="https://i.ibb.co/jbQ4fh9/orange.jpg" alt="" class="product-card__image">
+                        <div class="product-card__info">
+                            <h3 id="product_heading_3" class="product-card__heading heading heading--lg">
+                                <a href="#" class="product-card__link">Апельсиновый сок</a>
+                            </h3>
+                            <p class="product-card__description">Он придётся по душе, даже если ты слива лиловая, спелая, садовая.</p>
+                            <button type="button" class="product-card__button button" disabled>
+                                Закончилось
+                            </button>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+        </div>
+    </section>
+</main>
+</body>
+</html>
